@@ -15,8 +15,8 @@ block navbar
 
 block content
     .text-center
-        h3.title(style="background-color: var(--primary-100)") Nasze aktualności
-        .gx-5 
+        h3.title.bg-dark.bg-gradient Nasze aktualności
+        .content
             each item in data
                 .card.text-center.m-5
                     if item.image  

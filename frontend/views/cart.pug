@@ -14,7 +14,7 @@ block navbar
         a.nav-link(href="/archive") Archiwum aktualności
 
 block content
-    .text-center.title(style="background-color: var(--primary-200)")
+    .text-center.title.bg-dark.bg-gradient
         h3 Koszyk
     if data.length == 0
         .text-center.p-5
@@ -22,10 +22,10 @@ block content
             p Przejdź do menu i dodaj coś do zamówienia!
     else
         form(action="")
-            .container.p-5(style="background-color: var(--background-100").rounded
+            .container.p-5.rounded.border
                 .row
                     .col-12
-                        table.table.table-striped
+                        table.table.table-striped.border.rounded
                             thead
                                 tr
                                     th(scope="col") Nazwa
@@ -38,13 +38,9 @@ block content
                                         td #{item.price} zł
                                         td
                                             button.btn.btn-danger(name="delete" value=item.id) Usuń
-                                tr 
-                                    td 
-                                    td Łącznie: 
-                                    td #{data.reduce((acc, item) => acc + item.price, 0)} zł
-                        input(type="text", name="address", placeholder="Adres dostawy") 
-                        br.m-3
-                        button.btn.btn-primary(type="submit", name="order") Zamów 
-                        - console.log(data)
+                        p Twoja cena: #{data.reduce((acc, item) => acc + item.price, 0)} zł
+                        .input-group.my-3
+                            input(type="text", name="address", placeholder="Adres dostawy").form-control
+                        button.btn.btn-primary(type="submit", name="order") Zamów   
                         if data.noaddress
                             p.text-danger.m-2 Nie podano adresu dostawy

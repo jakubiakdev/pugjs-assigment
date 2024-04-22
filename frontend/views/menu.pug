@@ -14,10 +14,10 @@ block navbar
         a.nav-link(href="/archive") Archiwum aktualności
 
 block content
-    .text-center.title(style="background-color: var(--accent-100)")
+    .text-center.title.bg-dark.bg-gradient
         h3 Nasze menu
         p Twoja okazja na wypróbowanie kuchni całego świata!
-    form(action="/cart", method="get").menu
+    form(action="/cart", method="get").content
         each item in data
             .card.mb-3
                 .row.g-0
@@ -30,6 +30,6 @@ block content
                                     h5.card-title #{item.name}
                                     p.card-text
                                         | #{item.description}
-                                .col-sm-3.buttonColumn
-                                    button(type="submit", value=item.id, name="item").btn.btn-kg.buyButton
+                                .col-sm-3.d-flex.align-content-center.justify-content-center
+                                    button(type="submit", value=item.id, name="item").btn.btn-lg.btn-primary
                                         | Zamów teraz za #{item.price} zł!

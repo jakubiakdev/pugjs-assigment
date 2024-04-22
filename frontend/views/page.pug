@@ -9,17 +9,17 @@ html(lang="pl" data-bs-theme="dark")
         block head 
     body
         header
-            nav.navbar.sticky-top.navbar-expand-lg
+            nav.navbar.sticky-top.navbar-expand-lg.border-bottom
                 .container-fluid 
-                    span(style="color: var(--primary-500)").navbar-brand.mb-0 Kuchnia Świata
-                    button.navbar-toggler(type="button", data-bs-toggle="collapse", data-bs-target="#navbarNav", aria-controls="navbarNav", aria-expanded="false", aria-label="Toggle navigation")
+                    span.navbar-brand.mb-0 Kuchnia Świata
+                    button.navbar-toggler(type="button", data-bs-toggle="collapse", data-bs-target="#navbarNav", aria-controls="navbarNav", aria-expanded="false", aria-label="Rozsuń nawigację")
                         span.navbar-toggler-icon
                     .collapse.navbar-collapse#navbarNav
                         ul.navbar-nav.ms-auto.mb-2.mb-lg-0
                             block navbar
         main
             block content 
-        footer(style="background-color: var(--background-100); color: var(--text-700)").fixed-bottom.d-flex.justify-content-between.align-items-center.text-center
+        footer.fixed-bottom.d-flex.justify-content-between.align-items-center.text-center.border-top.bg-dark
             p.m-1(style="margin: 0 auto; width: 30rem") Jana Pawła II, 42 
             p.m-1(style="margin: 0 auto; width: 30rem") +48 000 000 000
             p.m-1(style="margin: 0 auto; width: 30rem") Wt. - Nd.: 16-24

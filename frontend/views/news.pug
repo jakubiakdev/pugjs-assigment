@@ -16,7 +16,7 @@ block navbar
 block content
     .text-center 
         a(href="/archive") Wróć do archiwum aktualności
-    .text-center.news 
+    .text-center.content 
         if data.image
             img(src=`/${data.image}`, alt="", style="max-height: 40vh;").rounded.m-2
         h5 #{data.title}

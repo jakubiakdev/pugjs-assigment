@@ -1,134 +1,23 @@
-/* https://www.realtimecolors.com/?colors=f4ebe5-070503-ed8c4b-3c7934-70c295&fonts=Poppins-Poppins */
-:root {
-    --text-50: #120c08;
-    --text-100: #24170f;
-    --text-200: #482f1e;
-    --text-300: #6c462d;
-    --text-400: #905e3c;
-    --text-500: #b4754b;
-    --text-600: #c3916f;
-    --text-700: #d2ac93;
-    --text-800: #e1c8b7;
-    --text-900: #f0e3db;
-    --text-950: #f7f1ed;
-
-    --background-50: #120d08;
-    --background-100: #241a0f;
-    --background-200: #47331f;
-    --background-300: #6b4d2e;
-    --background-400: #8f663d;
-    --background-500: #b3804d;
-    --background-600: #c29970;
-    --background-700: #d1b394;
-    --background-800: #e0ccb8;
-    --background-900: #f0e6db;
-    --background-950: #f7f2ed;
-
-    --primary-50: #170b02;
-    --primary-100: #2e1505;
-    --primary-200: #5d2b09;
-    --primary-300: #8b400e;
-    --primary-400: #ba5512;
-    --primary-500: #e86b17;
-    --primary-600: #ed8845;
-    --primary-700: #f1a674;
-    --primary-800: #f6c4a2;
-    --primary-900: #fae1d1;
-    --primary-950: #fdf0e8;
-
-    --secondary-50: #091208;
-    --secondary-100: #12240f;
-    --secondary-200: #23471f;
-    --secondary-300: #356b2e;
-    --secondary-400: #478f3d;
-    --secondary-500: #58b34d;
-    --secondary-600: #7ac270;
-    --secondary-700: #9bd194;
-    --secondary-800: #bce0b8;
-    --secondary-900: #def0db;
-    --secondary-950: #eef7ed;
-
-    --accent-50: #08120c;
-    --accent-100: #0f2418;
-    --accent-200: #1f4731;
-    --accent-300: #2e6b49;
-    --accent-400: #3d8f62;
-    --accent-500: #4db37a;
-    --accent-600: #70c295;
-    --accent-700: #94d1af;
-    --accent-800: #b8e0ca;
-    --accent-900: #dbf0e4;
-    --accent-950: #edf7f2;
-}
-
-
-body {
-    background-color: var(--background-50);
-    color: var(--text-900);
-}
-
-.navbar {
-    background-color: var(--background-100);
-}
-
 main {
     margin-bottom: 3rem;
 }
 
-/* ======== MENU ======== */
+.title {
+    width: 100%;
+    padding: 4rem 7rem 4rem 7rem;
+    margin: 0 0 3rem 0;
+}
 
-.menu {
+.content {
     padding: 0 20%;
 }
+
+/* ======== MENU ======== */
 
 .menuImage {
     object-fit: cover;
     object-position: center;
     width: 100%;
-}
-
-.buyButton {
-    width: 80%;
-    height: 80%;
-    background-color: var(--secondary-600);
-    color: var(--background-100);
-    transition: all;
-    transition-duration: 0.2s;
-}
-
-.buyButton:hover {
-    background-color: var(--primary-700);
-}
-
-.buttonColumn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* ======== LANDING ======== */
-.landing {
-    text-align: center;
-}
-.title {
-    background-color: var(--accent-200);
-    width: 100%;
-    padding: 4rem 7rem 7rem 7rem;
-    clip-path: ellipse(70% 50% at 50% 35%);
-} 
-
-.cta {
-    background-color: var(--primary-500);
-    transition: all;
-    transition-duration: 0.2s;
-}
-
-.cta:hover {
-    background-color: var(--accent-500);
-}
-
-.news {
-    padding: 0 3%;
 }
 
 /* ========= ARCHIVE ========= */
