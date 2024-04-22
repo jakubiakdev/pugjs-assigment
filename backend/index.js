@@ -27,7 +27,6 @@ new Promise((resolve, reject) => {
         if (results.length > 0) {
             console.log("Baza danych wykryta")
             resolve()
-
         } else {
             console.log("Baza danych nie istnieje, tworzenie")
             db.query(`CREATE DATABASE ${dbname}; USE ${dbname};`, (err) => {
@@ -79,7 +78,6 @@ new Promise((resolve, reject) => {
         })
     })
 
-
     app.get('/api/news/:id', (req, res) => {
         db.query('SELECT * FROM news where id = ' + req.params.id, (err, data) => {
             if(err || data.length == 0) {
@@ -126,7 +124,6 @@ new Promise((resolve, reject) => {
     })
 
     app.post('/api/orders/:id/status', (req, res) => {
-
         db.query(`UPDATE orders SET status = ${db.escape(req.body.status)} WHERE id = ${req.params.id}`, (err, data) => {
             if (err) {
                 console.log(err)
@@ -136,17 +133,7 @@ new Promise((resolve, reject) => {
         })
     })
 
-
     app.get('/api/orders', (req, res) => {
-        function getItems(orderId) {
-            return new Promise((resolve, reject) => {
-                db.query(`SELECT name, menu.price FROM ordered_items join menu on ordered_items.menu_id = menu.id WHERE order_id = ${orderId}`, (err, items) => {
-                    if (err) return reject(err);
-                    resolve(items);
-                });
-            });
-        }
-
         db.query(`SELECT * FROM orders WHERE orders.status != "Dostarczone"`, (err, data) => {
             if (err) {
                 console.log(err)
@@ -167,6 +154,16 @@ new Promise((resolve, reject) => {
                     res.status(500).send();
                 });
         })
+
+        function getItems(orderId) {
+            return new Promise((resolve, reject) => {
+                db.query(`SELECT name, menu.price FROM ordered_items join menu on ordered_items.menu_id = menu.id WHERE order_id = ${orderId}`, (err, items) => {
+                    if (err) return reject(err);
+                    resolve(items);
+                });
+            });
+        }
+        
     })
 
     app.listen(port, () => console.log(`Backend jest dostępny http://localhost:${port}`))

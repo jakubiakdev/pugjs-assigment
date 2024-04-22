@@ -31,5 +31,4 @@ app.all('*', (req, res) => {
 
 module.exports = app
 
-
 app.listen(port, () => console.log(`Frontend jest dostępny http://localhost:${port}`))
