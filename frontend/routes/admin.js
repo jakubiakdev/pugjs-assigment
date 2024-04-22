@@ -38,7 +38,6 @@ route.post('/admin', (req, res) => {
         res.redirect('/login')
         return
     }
-    console.log(req.body)
     if(req.body.doreczenie != undefined) {
         fetch(`http://localhost:8080/api/orders/${req.body.doreczenie}/status`, {
             method: 'POST',

@@ -23,7 +23,6 @@ new Promise((resolve, reject) => {
         if (err) {
             console.log(err)
             throw err
-            reject(err)
         }
         if (results.length > 0) {
             console.log("Baza danych wykryta")
