@@ -14,12 +14,12 @@ block navbar
         a.nav-link(href="/archive") Archiwum aktualności
 
 block content
-    .text-center.title.bg-dark.bg-gradient
+    .text-center.title.bg-dark.bg-gradient.text-body-emphasis
         h3 Koszyk
     if data.length == 0
         .text-center.p-5
-            h5 Twój koszyk jest pusty
-            p Przejdź do menu i dodaj coś do zamówienia!
+            h5.text-body-emphasis Twój koszyk jest pusty
+            p.text-body-secondary Przejdź do menu i dodaj coś do zamówienia!
     else
         form(action="")
             .container.p-5.rounded.border

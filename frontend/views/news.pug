@@ -20,6 +20,6 @@ block content
         if data.image
             img(src=`/${data.image}`, alt="", style="max-height: 40vh;").rounded.m-2
         h5 #{data.title}
-        p Utworzono #{new Date(data.date).toLocaleDateString()}
+        p.text-body-secondary Utworzono #{new Date(data.date).toLocaleDateString()}
     
         p #{data.content}
