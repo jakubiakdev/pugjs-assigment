@@ -1,0 +1,22 @@
+extends page
+
+block head 
+    title Kuchnia Świata
+
+block navbar
+    li.nav-item
+        a.nav-link(href="/") Strona główna
+    li.nav-item
+        a.nav-link(href="/menu") Menu
+    li.nav-item 
+        a.nav-link(href="/cart") Koszyk
+    li.nav-item 
+        a.nav-link(href="/archive") Archiwum aktualności
+
+block content
+    .text-center.p-5
+        h1 Uh oh! Wystąpił błąd
+        p.fs-5 Natrafiłeś na nieznaną nam stronę, albo wystąpił błąd serwera
+        a(href="/").btn.btn-primary.btn-lg Wróć na stronę główną 
+        br 
+        code #{data}

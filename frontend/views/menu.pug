@@ -1,0 +1,35 @@
+extends page
+
+block head 
+    title Menu - Kuchnia Świata
+
+block navbar
+    li.nav-item
+        a.nav-link(href="/") Strona główna
+    li.nav-item
+        a.nav-link.active(href="/menu") Menu
+    li.nav-item 
+        a.nav-link(href="/cart") Koszyk
+    li.nav-item 
+        a.nav-link(href="/archive") Archiwum aktualności
+
+block content
+    .text-center.title(style="background-color: var(--accent-100)")
+        h3 Nasze menu
+        p Twoja okazja na wypróbowanie kuchni całego świata!
+    form(action="/cart", method="get").menu
+        each item in data
+            .card.mb-3
+                .row.g-0
+                    .col-md-4
+                        img.menuImage.rounded-start(src=`${item.image}` alt=`${item.name}`)
+                    .col-md-8
+                        .card-body.h-100
+                            .row.h-100
+                                .col-sm
+                                    h5.card-title #{item.name}
+                                    p.card-text
+                                        | #{item.description}
+                                .col-sm-3.buttonColumn
+                                    button(type="submit", value=item.id, name="item").btn.btn-kg.buyButton
+                                        | Zamów teraz za #{item.price} zł!
