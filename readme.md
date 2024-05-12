@@ -19,6 +19,7 @@ Jest to strona internetowa renderowana na serwerze na templateach Pug.js. Strony
 - Wczytywanie newsów i menu z bazy danych
 - Panel administracyjny z logowaniem
     - Usuwanie zamówień, zmiana ich statusu
+- Error handling z własną stroną od błędów
 
 ## Wykorzystane technologie
 - Node.js

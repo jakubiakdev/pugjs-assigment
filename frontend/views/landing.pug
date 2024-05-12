@@ -1,0 +1,42 @@
+extends page
+
+block head 
+    title Kuchnia Świata
+
+block navbar
+    li.nav-item
+        a.nav-link.active(href="/") Strona główna
+    li.nav-item
+        a.nav-link(href="/menu") Menu
+    li.nav-item 
+        a.nav-link(href="/cart") Koszyk
+    li.nav-item 
+        a.nav-link(href="/archive") Archiwum aktualności
+
+block content
+    .text-center 
+        .title.bg-dark.bg-gradient
+            h1.text-body-emphasis
+                | Kuchnia Świata
+            h3.text-body-secondary
+                | Twój ulubiony lokal do wypróbowania czegoś nowego, ekscytującego, albo rozkoszenia się klasykami z każdego miejsca na świecie.
+        div
+            h2 Gotowy?
+            a(href="/menu", role="button").btn-primary.btn.btn-lg.m-2
+                | Jestem! 
+        div.my-3
+            iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d312780.39068614505!2d20.73178753149442!3d52.23254277025812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc669a869f01%3A0x72f0be2a88ead3fc!2sWarsaw!5e0!3m2!1sen!2spl!4v1715544037011!5m2!1sen!2spl", style="width: 100%; height: 40vh; ") 
+        .px-1.container
+            h4.m-3 Aktualności:
+            .px-1.row.gx-5 
+                each item in data
+                    .col 
+                        .card.text-center
+                            .card-header 
+                                h5.card-title #{item.title}
+                            .card-body
+                                p.card-text #{item.content}
+                                a.btn(href=`/news/${item.id}`).btn-outline-primary Czytaj więcej...
+                            .card-footer.text-body-secondary
+                              | #{new Date(item.date).toLocaleDateString()}
+        a(href="/admin").t-5 Logowanie do panelu administracyjnego
