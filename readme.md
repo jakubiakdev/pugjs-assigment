@@ -3,11 +3,11 @@ Mały szkolny projekt z użyciem Pug.js, Express.js i MySQL
 
 ## Architektura
 
-### `/backend`
+### `./backend/`
 
 Jest to RESTowe api łączące się z bazą danych MySQL dające dostęp do uporządkowanych danych w JSONie.
 
-### `/frontend`
+### `./frontend/`
 
 Jest to strona internetowa renderowana na serwerze na templateach Pug.js. Strony są routowane przez Express.js, a dane dostarcza backend do serwera frontendu. Klient łączy się jedynie z frontendem, przez co na frontendzie zarządzane są sesje związane z koszykami oraz przekazywanie dalej informacji z formularzy.
 
